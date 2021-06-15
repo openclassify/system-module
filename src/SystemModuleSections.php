@@ -1,4 +1,4 @@
-<?php namespace Anomaly\SystemModule;
+<?php namespace Visiosoft\SystemModule;
 
 use Anomaly\Streams\Platform\Ui\ControlPanel\ControlPanelBuilder;
 
@@ -40,7 +40,7 @@ class SystemModuleSections
      */
     public function handle(ControlPanelBuilder $builder)
     {
-        $disabled = !config('anomaly.module.system::telescope.enabled', false);
+        $disabled = !config('visiosoft.module.system::telescope.enabled', false);
 
         foreach ($this->sections as $i => $slug) {
 
@@ -53,7 +53,7 @@ class SystemModuleSections
                 ],
             ];
 
-            $enabled = config('anomaly.module.system::telescope.watchers.' . $slug . '.enabled');
+            $enabled = config('visiosoft.module.system::telescope.watchers.' . $slug . '.enabled');
 
             $buttons['toggle'] = [
                 'type' => $enabled ? 'danger' : 'success',

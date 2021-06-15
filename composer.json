@@ -1,5 +1,5 @@
 {
-    "name": "anomaly/system-module",
+    "name": "visiosoft/system-module",
     "type": "streams-addon",
     "description": "A system management and monitoring utility for the Streams Platform.",
     "keywords": [
@@ -27,7 +27,7 @@
         "forum": "https://pyrocms.com/forum/channels/system-module",
         "slack": "https://pyrocms.com/slack",
         "issues": "https://github.com/pyrocms/pyrocms/issues?q=is:issue is:open [system-module]",
-        "source": "https://github.com/anomalylabs/system-module"
+        "source": "https://gitlab.com/openclassify/system-module"
     },
     "require": {
         "anomaly/streams-platform": "^1.7",
@@ -35,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Anomaly\\SystemModule\\": "src/"
+            "Visiosoft\\SystemModule\\": "src/"
         }
     }
 }

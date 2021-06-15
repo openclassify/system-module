@@ -1,4 +1,4 @@
-<?php namespace Anomaly\SystemModule\Telescope\Support\CheckboxesFieldType;
+<?php namespace Visiosoft\SystemModule\Telescope\Support\CheckboxesFieldType;
 
 use Anomaly\CheckboxesFieldType\CheckboxesFieldType;
 
@@ -21,10 +21,10 @@ class EnabledWatchersOptions
     {
         $fieldType->setOptions(
             array_combine(
-                $keys = array_keys(config('anomaly.module.system::telescope.watchers')),
+                $keys = array_keys(config('visiosoft.module.system::telescope.watchers')),
                 array_map(
                     function ($monitor) {
-                        return trans("anomaly.module.system::tab.{$monitor}");
+                        return trans("visiosoft.module.system::tab.{$monitor}");
                     },
                     $keys
                 )

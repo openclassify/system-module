@@ -1,4 +1,4 @@
-<?php namespace Anomaly\SystemModule\Entry;
+<?php namespace Visiosoft\SystemModule\Entry;
 
 /**
  * Class EntryModel

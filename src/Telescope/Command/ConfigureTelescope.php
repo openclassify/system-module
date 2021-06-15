@@ -1,4 +1,4 @@
-<?php namespace Anomaly\SystemModule\Telescope\Command;
+<?php namespace Visiosoft\SystemModule\Telescope\Command;
 
 use Laravel\Telescope\Storage\EntryModel;
 use Laravel\Telescope\Telescope;
@@ -22,14 +22,14 @@ class ConfigureTelescope
         /**
          * Check if monitoring is enabled at all.
          */
-        if (!config('anomaly.module.system::telescope.enabled', false)) {
+        if (!config('visiosoft.module.system::telescope.enabled', false)) {
             return;
         }
 
         /**
          * Check if disabled for control panel.
          */
-        if (!config('anomaly.module.system::telescope.admin_enabled', false) && request()->is('admin*')) {
+        if (!config('visiosoft.module.system::telescope.admin_enabled', false) && request()->is('admin*')) {
             return;
         }
 
@@ -46,14 +46,14 @@ class ConfigureTelescope
          * and unattended or is being flooded.
          */
         $count = cache()->remember(
-            'anomaly.module.system::telescope.count',
+            'visiosoft.module.system::telescope.count',
             5,
             function () {
                 return EntryModel::count();
             }
         );
 
-        if ($count >= config('anomaly.module.system::telescope.max_entries', 10000)) {
+        if ($count >= config('visiosoft.module.system::telescope.max_entries', 10000)) {
 
             // @todo maybe add a flash message here if within System module
 
@@ -63,8 +63,8 @@ class ConfigureTelescope
         /**
          * Loop over and configure.
          */
-        $watchers = config('anomaly.module.system::telescope.watchers', []);
-        $enabled  = config('anomaly.module.system::telescope.enabled_watchers', []);
+        $watchers = config('visiosoft.module.system::telescope.watchers', []);
+        $enabled  = config('visiosoft.module.system::telescope.enabled_watchers', []);
 
         foreach ($watchers as $watcher => $config) {
 
@@ -73,7 +73,7 @@ class ConfigureTelescope
             config(
                 [
                     $config['key']                                                 => $status,
-                    "anomaly.module.system::telescope.watchers.{$watcher}.enabled" => $status,
+                    "visiosoft.module.system::telescope.watchers.{$watcher}.enabled" => $status,
                 ]
             );
         }

@@ -1,4 +1,4 @@
-<?php namespace Anomaly\SystemModule\Test\Feature;
+<?php namespace Visiosoft\SystemModule\Test\Feature;
 
 class SystemModuleTest extends \TestCase
 {

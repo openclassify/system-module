@@ -5,13 +5,13 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Class AnomalyModuleSystemCreateTelescopeTables
+ * Class VisiosoftModuleSystemCreateTelescopeTables
  *
  * @link   http://pyrocms.com/
  * @author PyroCMS, Inc. <support@pyrocms.com>
  * @author Ryan Thompson <ryan@pyrocms.com>
  */
-class AnomalyModuleSystemCreateTelescopeTables extends Migration
+class VisiosoftModuleSystemCreateTelescopeTables extends Migration
 {
 
     /**

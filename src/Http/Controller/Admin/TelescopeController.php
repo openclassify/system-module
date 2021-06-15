@@ -1,11 +1,11 @@
-<?php namespace Anomaly\SystemModule\Http\Controller\Admin;
+<?php namespace Visiosoft\SystemModule\Http\Controller\Admin;
 
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Asset\Asset;
 use Anomaly\Streams\Platform\Console\Kernel;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Anomaly\Streams\Platform\Support\Collection;
-use Anomaly\SystemModule\Telescope\Table\TelescopeTableBuilder;
+use Visiosoft\SystemModule\Telescope\Table\TelescopeTableBuilder;
 use Laravel\Telescope\Contracts\EntriesRepository;
 use Laravel\Telescope\Storage\EntryModel;
 
@@ -32,8 +32,8 @@ class TelescopeController extends AdminController
             return redirect('admin/system/requests');
         }
 
-        if (!$table = config("anomaly.module.system::telescope.watchers.{$type}.table")) {
-            throw new \Exception("Config [anomaly.module.system::telescope.watchers.{$type}.table] not found.");
+        if (!$table = config("visiosoft.module.system::telescope.watchers.{$type}.table")) {
+            throw new \Exception("Config [visiosoft.module.system::telescope.watchers.{$type}.table] not found.");
         }
 
         /* @var TelescopeTableBuilder $table */
@@ -55,7 +55,7 @@ class TelescopeController extends AdminController
      */
     public function view(EntriesRepository $repository, Asset $asset, $type, $id)
     {
-        $watcher = config('anomaly.module.system::telescope.watchers.' . $type);
+        $watcher = config('visiosoft.module.system::telescope.watchers.' . $type);
 
         if (!$view = array_get($watcher, 'view')) {
             dd($id);
@@ -71,11 +71,11 @@ class TelescopeController extends AdminController
 
         $this->breadcrumbs->add($id);
 
-        $asset->add('styles.css', 'anomaly.module.system::css/prism.css');
-        $asset->add('styles.css', 'anomaly.module.system::css/system.css');
+        $asset->add('styles.css', 'visiosoft.module.system::css/prism.css');
+        $asset->add('styles.css', 'visiosoft.module.system::css/system.css');
 
-        $asset->add('scripts.js', 'anomaly.module.system::js/prism.js');
-        $asset->add('scripts.js', 'anomaly.module.system::js/initialize.js');
+        $asset->add('scripts.js', 'visiosoft.module.system::js/prism.js');
+        $asset->add('scripts.js', 'visiosoft.module.system::js/initialize.js');
 
         /* @var Collection $collection */
         $collection = EntryModel::where('batch_id', $entry['batchId'])
@@ -102,7 +102,7 @@ class TelescopeController extends AdminController
             $watcher = !in_array($type, ['cache', 'mail', 'schedule']) ? str_plural($type) : $type;
 
             /* @var TelescopeTableBuilder $table */
-            if (!$table = config('anomaly.module.system::telescope.watchers.' . $watcher . '.table')) {
+            if (!$table = config('visiosoft.module.system::telescope.watchers.' . $watcher . '.table')) {
                 continue;
             }
 
@@ -138,8 +138,8 @@ class TelescopeController extends AdminController
     public function toggle(SettingRepositoryInterface $settings, $type)
     {
         $settings->set(
-            'anomaly.module.system::' . $type . '_enabled',
-            !config('anomaly.module.system::telescope.watchers.' . $type . '.enabled', false)
+            'visiosoft.module.system::' . $type . '_enabled',
+            !config('visiosoft.module.system::telescope.watchers.' . $type . '.enabled', false)
         );
 
         return $this->redirect->back();
