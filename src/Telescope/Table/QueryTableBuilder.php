@@ -1,4 +1,4 @@
-<?php namespace Anomaly\SystemModule\Telescope\Table;
+<?php namespace Visiosoft\SystemModule\Telescope\Table;
 
 /**
  * Class QueryTableBuilder

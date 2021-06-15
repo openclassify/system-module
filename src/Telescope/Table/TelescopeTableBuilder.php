@@ -1,7 +1,7 @@
-<?php namespace Anomaly\SystemModule\Telescope\Table;
+<?php namespace Visiosoft\SystemModule\Telescope\Table;
 
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
-use Anomaly\SystemModule\Entry\EntryModel;
+use Visiosoft\SystemModule\Entry\EntryModel;
 use Illuminate\Database\Eloquent\Builder;
 
 /**
@@ -85,7 +85,7 @@ class TelescopeTableBuilder extends TableBuilder
         if (!$this->getColumns()) {
             $this->setColumns(
                 config(
-                    'anomaly.module.system::telescope.' . $this->getType() . '.table.columns',
+                    'visiosoft.module.system::telescope.' . $this->getType() . '.table.columns',
                     ['entry.id', '{{ entry|json_encode }}']
                 )
             );

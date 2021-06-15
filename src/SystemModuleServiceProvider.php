@@ -1,7 +1,7 @@
-<?php namespace Anomaly\SystemModule;
+<?php namespace Visiosoft\SystemModule;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
-use Anomaly\SystemModule\Telescope\Command\ConfigureTelescope;
+use Visiosoft\SystemModule\Telescope\Command\ConfigureTelescope;
 use Laravel\Telescope\Console\ClearCommand;
 use Laravel\Telescope\Console\PruneCommand;
 use Laravel\Telescope\Contracts\ClearableRepository;
@@ -46,9 +46,9 @@ class SystemModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
-        'admin/system/{type?}'          => 'Anomaly\SystemModule\Http\Controller\Admin\TelescopeController@index',
-        'admin/system/{type}/toggle'    => 'Anomaly\SystemModule\Http\Controller\Admin\TelescopeController@toggle',
-        'admin/system/{type}/view/{id}' => 'Anomaly\SystemModule\Http\Controller\Admin\TelescopeController@view',
+        'admin/system/{type?}'          => 'Visiosoft\SystemModule\Http\Controller\Admin\TelescopeController@index',
+        'admin/system/{type}/toggle'    => 'Visiosoft\SystemModule\Http\Controller\Admin\TelescopeController@toggle',
+        'admin/system/{type}/view/{id}' => 'Visiosoft\SystemModule\Http\Controller\Admin\TelescopeController@view',
     ];
 
     /**

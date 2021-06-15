@@ -1,4 +1,4 @@
-<?php namespace Anomaly\SystemModule\Telescope\Table;
+<?php namespace Visiosoft\SystemModule\Telescope\Table;
 
 /**
  * Class DumpTableBuilder
@@ -53,7 +53,7 @@ class DumpTableBuilder extends TelescopeTableBuilder
      */
     protected $assets = [
         'scripts.js' => [
-            'anomaly.module.system::js/dumps.js',
+            'visiosoft.module.system::js/dumps.js',
         ],
     ];
 }

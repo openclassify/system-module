@@ -1,4 +1,4 @@
-<?php namespace Anomaly\SystemModule;
+<?php namespace Visiosoft\SystemModule;
 
 use Anomaly\Streams\Platform\Addon\Module\Module;
 

@@ -3,7 +3,7 @@
 {% block  content %}
     <div class="container-fluid">
 
-        {% include "anomaly.module.system::admin/partials/table" with {'attributes': {
+        {% include "visiosoft.module.system::admin/partials/table" with {'attributes': {
             'Time': 'entry.createdAt',
             'Hostname': 'entry.content.hostname',
             'channel': 'entry.content.channel',
@@ -11,14 +11,14 @@
             'Tags': 'entry.tags',
         }} %}
 
-        {% include "anomaly.module.system::admin/partials/user" %}
+        {% include "visiosoft.module.system::admin/partials/user" %}
 
-        {% include "anomaly.module.system::admin/partials/section" with {
+        {% include "visiosoft.module.system::admin/partials/section" with {
             'title': 'Notifiable',
             'attribute' : '{{ json_encode(entry.content.notifiable, 128)|raw }}',
         } %}
 
-        {% include "anomaly.module.system::admin/partials/batch" %}
+        {% include "visiosoft.module.system::admin/partials/batch" %}
 
     </div>
 {% endblock %}

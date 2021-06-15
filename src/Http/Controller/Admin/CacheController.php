@@ -1,4 +1,4 @@
-<?php namespace Anomaly\SystemModule\Http\Controller\Admin;
+<?php namespace Visiosoft\SystemModule\Http\Controller\Admin;
 
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 
